@@ -1,0 +1,22 @@
+# scan-all.sh のスキャン対象サイト定義
+#
+# このファイルを sites.conf にコピーして、自分の環境に合わせて編集してください:
+#   cp sites.conf.example sites.conf
+#
+# 1行1サイト、次の形式で書きます(| 区切り):
+#   キー|種別|ロケール|パス
+#
+#   キー     : サイトの識別名(--site で指定するときの名前。英数字)
+#   種別     : wp     = WordPress(本体を公式チェックサムと照合 + strict)
+#              static = 静的サイト・自作アプリ(中身スキャンのみ)
+#   ロケール : wp のとき WordPress のロケール(日本語版なら ja、英語版なら en_US)
+#              static のときは - (使われない)
+#   パス     : スキャンするディレクトリの絶対パス
+#
+# # で始まる行と空行は無視されます。
+
+# 例: WordPress サイト(日本語版)
+example-wp|wp|ja|/var/lib/docker/volumes/example_wp_content/_data
+
+# 例: 静的サイト・自作アプリ
+example-static|static|-|/var/www/example.com

@@ -1,0 +1,25 @@
+# 自分の環境固有のサイト定義(絶対に公開しない)
+sites.conf
+
+# スキャン結果(感染状況が漏れるので公開しない)
+scan-logs/
+
+# 確認済みファイルの除外リスト(環境固有・パスとハッシュを含む)
+allowlist*.txt
+allowlist-*.txt
+*.csv
+unpacked/
+*-unpacked/
+
+# 剥がしたマルウェア検体
+*.unpacked
+*.L[0-9]*.txt
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# エディタ・OS
+*.swp
+.DS_Store
